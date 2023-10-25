@@ -1,0 +1,79 @@
+:root {
+    --white: #fffbfb;
+    --grey: #f0eef1;
+    --black: #050505;
+    --red: #ff7070;
+    --light-green: #9fff9c;
+    --light-red: #ff9c9c;
+    --border-radius: 8px;
+    --container-width: 1200px;
+    --shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    
+  }
+
+
+
+html
+
+
+body {
+    background-color: var(--grey);
+    color: var(--black);
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 500; 
+    margin:0px;
+    padding: 0px;
+    
+}
+
+.header , .container {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    
+    margin:0px;
+    padding:0px;
+    
+}
+h1{
+    padding-left: 50px;
+}
+.header{
+    box-shadow: var(--shadow);
+    
+}
+
+.container {
+    width:100%;
+    background-color: var(--white);
+}
+
+#mainBody{
+    display: flex;
+    width:100%;
+    justify-content: center;
+    padding-top:30px;
+}
+
+.addBookButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 100%;
+}
+button:hover{
+    filter:brightness(90%);
+}
+.btn{
+    font-size: 24px;
+    font-weight: 600;
+    border:none;
+    border-radius: var(--border-radius);
+}
+
+.user-entry{
+    
+}
+
