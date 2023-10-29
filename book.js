@@ -1,5 +1,21 @@
 const myLibrary = [];
 
+function createBook(){
+    for (let books in myLibrary){
+        const bookUser = document.createElement('div');
+        const bookUserName = document.createElement('div');
+        const bookUserAuthor = document.createElement('div');
+        const bookUserPages = document.createElement('div');
+        libraryShelf.append(bookUser);
+        bookUser.append(bookUserName);
+        bookUser.append(bookUserAuthor);
+        bookUser.append(bookUserPages);
+        console.log(title)
+        bookUserName.textContent = [books.title]
+        bookUserAuthor.textContent = [books.author];
+        bookUserPages.textContent = [books.pages];
+    }
+}
 
 function book(title,author,pages,read){
      this.title = title;
@@ -15,19 +31,48 @@ function book(title,author,pages,read){
          }
      }
 }
-//const creareCardBtn = document.getElementById('cBook')
-// const cards = document.getElementById('cards');
-// let i = 0;
-// function createCard(){
-//     for (books in myLibrary){
-//         const card = document.createElement('div');
-//         card.textContent = `Bookname: ${myLibrary[i].title} Bookauthor:${myLibrary[0].author} BookPages: ${myLibrary[0].pages}`
-//         cards.append(card);
-//        i++;
-//     }
-// }
+
+
+function changeVisibility(){
+    userEntry.setAttribute('id','visible');
+    console.log(myLibrary)
+}
+function pushCreate(){
+    
+    
+    
+    //event.preventDefault();
+    console.log("Submit pressed");
+    const title = document.getElementById('title').value
+    const author = document.querySelector('#author').value;
+    const pages = document.querySelector('#pages').value;
+    let userBook = new book([title],[author],[pages],[haveURead])
+    myLibrary.push(userBook);
+
+}
+
+function reload(){
+    
+}
+
 const htmlElement = document.querySelector("html");
-htmlElement.style.filter = "brightness(65%)"
+const userEntry = document.querySelector('.user-entry');
+const addNewBook = document.querySelector('.add-new-book');
+//htmlElement.style.filter = "brightness(100%)";
+const myForm = document.querySelector('#myForm')
+const libraryShelf = document.querySelector('.library-shelves');
+const title = document.getElementById('title').value
+const author = document.querySelector('#author').value;
+const pages = document.querySelector('#pages').value;
+const submit = document.querySelector('#submitButton');
+const haveURead = document.querySelector('#haveURead').value;
+
+
+submit.addEventListener('click', pushCreate);
+addNewBook.addEventListener('click', changeVisibility);
+myForm.addEventListener('click', reload)
+
+
 let userBook;
 let bookName;
 let bookAuthor;
@@ -44,7 +89,7 @@ function addBookToLibrary(){
   
   createCard();
 }
-creareCardBtn.addEventListener('click', addBookToLibrary);
+//creareCardBtn.addEventListener('click', addBookToLibrary);
 
 // const onePiece = new book("One piece", "Eichiro oda", '20000',true);
 // onePiece.info();
