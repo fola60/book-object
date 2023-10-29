@@ -20,7 +20,7 @@
             </div>
             <div class="user-entry" id="userEntry" style="filter: brightness(100%);">
                 <h3 >Add new book</h3>
-                <form class="user-form" id="myForm" action="book.html" method="post">
+                <form class="user-form" id="myForm" action="book.html" method="post" onsubmit="return reload()">
                     <div class="wrapper" id="wrapper">
                         <div class="title">
                                 <input type="text" class="input" id="title" placeholder="Title">
@@ -36,7 +36,7 @@
                                 <input type="checkbox" class="input" id="haveURead">
                         </div>
                         <div class="submit" id="submit">
-                            <button class="btn" id="submitButton">Submit</button>
+                            <button type="submit" class="btn" id="submitButton">Submit</button>
                         </div>
                     </div>
                 </form>

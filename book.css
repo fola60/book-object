@@ -61,7 +61,7 @@ h1{
     align-items: center;
     padding-top:30px;
     height:100vh;
-    
+    margin-bottom: 2rem;
 }
 
 .addBookButton{
@@ -133,13 +133,27 @@ button:hover{
     background-color: var(--light-green);
 }
 
-.bookUser{
+.library-shelves{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: start;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
     font-size: 16px;
     border-radius: var(--border-radius);
     background-color: var(--white);
     font-weight: 600;
 }
 
+.bookUser{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
+    padding-top:2rem;
+    padding-bottom:2rem;
+    padding-right: 4rem;
+    padding-left:4rem;
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+}

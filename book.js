@@ -1,20 +1,26 @@
 const myLibrary = [];
 
 function createBook(){
-    for (let books in myLibrary){
+        libraryShelf.innerHTML = "";
+        let i = 0;
         const bookUser = document.createElement('div');
         const bookUserName = document.createElement('div');
         const bookUserAuthor = document.createElement('div');
         const bookUserPages = document.createElement('div');
+        bookUser.classList.add('bookUser');
         libraryShelf.append(bookUser);
         bookUser.append(bookUserName);
         bookUser.append(bookUserAuthor);
         bookUser.append(bookUserPages);
-        console.log(title)
-        bookUserName.textContent = [books.title]
-        bookUserAuthor.textContent = [books.author];
-        bookUserPages.textContent = [books.pages];
-    }
+
+        while (i < myLibrary.length){
+            bookUserName.textContent = [myLibrary[i].title]
+            bookUserAuthor.textContent = [myLibrary[i].author];
+            bookUserPages.textContent = [myLibrary[i].pages];
+            console.log(myLibrary[i].author);
+            i++;
+        }
+    console.log("Created book")
 }
 
 function book(title,author,pages,read){
@@ -35,24 +41,22 @@ function book(title,author,pages,read){
 
 function changeVisibility(){
     userEntry.setAttribute('id','visible');
-    console.log(myLibrary)
+    
 }
 function pushCreate(){
     
     
-    
-    //event.preventDefault();
-    console.log("Submit pressed");
+    userEntry.removeAttribute('id','visible');
+}
+
+function reload(){
     const title = document.getElementById('title').value
     const author = document.querySelector('#author').value;
     const pages = document.querySelector('#pages').value;
     let userBook = new book([title],[author],[pages],[haveURead])
     myLibrary.push(userBook);
-
-}
-
-function reload(){
-    
+    createBook();
+    return false;
 }
 
 const htmlElement = document.querySelector("html");
@@ -70,7 +74,7 @@ const haveURead = document.querySelector('#haveURead').value;
 
 submit.addEventListener('click', pushCreate);
 addNewBook.addEventListener('click', changeVisibility);
-myForm.addEventListener('click', reload)
+//myForm.addEventListener('click', reload)
 
 
 let userBook;
